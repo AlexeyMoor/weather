@@ -1,6 +1,6 @@
 const Weather = ({ weather, message, loading }) => {
   if (loading) {
-    return <div className={'infoWeath'}>Загружаем данные...</div>;
+    return <div className={'infoWeath'}>Loading...</div>;
   }
 
   if (message) {
