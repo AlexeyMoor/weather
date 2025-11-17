@@ -1,4 +1,4 @@
-const Form = ({getWeather}) => {
+const Form = ({getWeather, loading}) => {
 
   const handleClickSubmit = e => {
     e.preventDefault();
@@ -7,8 +7,10 @@ const Form = ({getWeather}) => {
   }
   return (
     <form onSubmit={handleClickSubmit}>
-      <input type={'text'} name={'city'} />
-      <button type={'submit'}>Get Weather</button>
+      <input type={'text'} name={'city'} placeholder={'Enter city name'} />
+      <button type={'submit'} disabled={loading}>
+        {loading ? 'Loading...' : 'Get Weather'}
+      </button>
     </form>
   );
 };
